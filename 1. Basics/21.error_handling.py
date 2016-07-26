@@ -21,7 +21,7 @@ try:
     print(x)
 
 except NameError as n:
-    print('Name Error found:', n)
+    print('Name Error found:', str(n))
 
 
 
