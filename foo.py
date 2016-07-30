@@ -1,11 +1,14 @@
-authorised_users = {
-    'admin': 'superadmin',
-    'viktor': 'password123'
-}
+from statistics import mean
 
-user = 'admin'
+foo = input("add a list with commas: ")
 
-if user not in authorised_users:
-    print('Not found')
-else:
-    print(authorised_users[user])
+bar = [int(grade) for grade in foo.split(',')]
+
+print(bar)
+
+
+
+
+print(mean(bar))
+
+
