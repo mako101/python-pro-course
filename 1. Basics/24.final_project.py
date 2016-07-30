@@ -1,11 +1,28 @@
 from statistics import mean
 #import getpass as g
 import re
+import sys
 
 
 authorised_users = dict(admin='superadmin', viktor='password123')
 
-all_grades = dict(Bob=[65,77,33], Sam=[44,66,77], Nic=[76,54,95])
+all_grades = dict(Bob=[65, 77, 33], Sam=[44, 66, 77], Nic=[76, 54, 95])
+
+
+def print_students():
+    print('The current list of students is:')
+    for student in all_grades:
+        print(student, ':', all_grades[student])
+
+
+def check_name(message):
+    student = input(message)
+    while student not in all_grades:
+        print('Name not recognised!')
+        student = input(message)
+    else:
+        return student
+
 
 def authenticate():
     print('Welcome to the grading system. Please identify yourself')
@@ -26,34 +43,64 @@ def authenticate():
                     print('Please try again or press Ctrl + C to exit')
                     password = str(input('Password: '))
                 # Quit after 3 attempts
-                print('No more attempts left. Goodbye!')
+                print('No more attempts left. Terminating!!!!')
+                sys.exit(2)
         else:
             print('You have successfully logged in!')
 
-def main_menu():
-    print('''
-    You have the followig options:
 
+def main_menu():
+    authenticate()
+    print('''
+    You have the followig options:\n
     [1] - Enter Grades
     [2] - Remove Student
     [3] - Get Grade Average
-    [4] - Exit
-
+    [4] - Show students' records
+    [5] - Exit\n
     ''')
     user_choice = input(' What would you like to do today? ')
     # Check that there are only numbers, and the valid number has been passed
-    while re.match("[a-zA-Z]", user_choice) or re.match("[\W+]", user_choice) or int(user_choice) not in range(1, 5):
+    while re.match("[a-zA-Z]", user_choice) or re.match("[\W+]", user_choice) or int(user_choice) not in range(1, 6):
             print('Invalid Input! Please enter a number between 1 and 4 to indicate the option you want')
             user_choice = input(' What would you like to do today? ')
     else:
         choice = int(user_choice)
+
         if choice == 1:
             student = str(input('Please enter the student\'s name: '))
             get_grades = input('Please enter their grades, separated by commas: ')
             grades = [int(grade) for grade in get_grades.split(',')]
             all_grades[student] = grades
-            print('The current list of studesnts is:')
-            for student in all_grades:
-                print(student, ':', all_grades[student])
+            print_students()
+
+        elif choice == 2:
+            student = check_name('Which student would you like to remove?: ')
+            print('The system currently has the following information about', student, ':')
+            print(student, all_grades[student])
+            confirm = str(input('Are you sure you want to delete this person?: ')).lower()
+            while confirm != 'yes' and confirm != 'no':
+                print('Please enter Yes or No')
+                confirm = str(input('Are you sure you want to delete this person?: ')).lower()
+            else:
+                if confirm == 'yes':
+                    print('Deleting all entries for', student)
+                    del all_grades[student]
+                    print_students()
+                elif confirm == 'no':
+                    print('Aborting the operation...')
+
+        elif choice == 3:
+            student = check_name('Whose grade average would you like to see?: ')
+            print(student, ':', all_grades[student])
+            print('Their average is: %.2f' % mean(all_grades[student]))
+
+        elif choice == 4:
+            print_students()
+
+        elif choice == 5:
+            print('Goodbye!')
+            sys.exit(0)
+
 
 main_menu()
