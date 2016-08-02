@@ -17,7 +17,7 @@ print("c:/users/settings/text")
 
 
 
-# Testing print capabilities and writinf directly to file
+# Testing print capabilities and writing directly to file
 test_file = open('testFile2.txt.', 'a')
 
 for i in range(5):
