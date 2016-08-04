@@ -25,4 +25,11 @@ print('''
 
 
 # Supports the same operations as the old method
-print("No. {0:2} squared is {1 and cubed is %5d" % (i, i ** 2, i ** 3))
+for i in range(1, 11):
+    print("No. {0:2} squared is {1:3} and cubed is {2:5}".format(i, i ** 2, i ** 3))
+
+print()
+
+# Can also not bother specifying arguments AND change alignment
+for i in range(1, 11):
+    print("No. {} squared is {:3} and cubed is {:<5} foo".format(i, i ** 2, i ** 3))
