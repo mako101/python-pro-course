@@ -28,3 +28,10 @@ for i in (range(3)):
     l = t.localtime()
     print(l.tm_hour, l.tm_min, l.tm_sec, sep=':')
 
+
+from time import perf_counter as my_timer
+import random
+
+def game():
+    input('Press Enter to Start')
+    wait_time = random.rand
