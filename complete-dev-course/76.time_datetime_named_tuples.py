@@ -58,3 +58,11 @@ print("perf_counter:", perf_counter())
 print("monolithic:", monotonic())
 print("process_time: (time for CPU perform operations)", process_time())
 
+
+
+# built-in function to get info about some of the availbe counters
+print('\n', 'clock: ', t.get_clock_info('clock'), sep='', )
+print('time:', t.get_clock_info('time'))
+print('monotonic:', t.get_clock_info('monotonic'))
+print('perf_counter:', t.get_clock_info('perf_counter'))
+print('process_time:', t.get_clock_info('process_time'))

@@ -1,14 +1,13 @@
+import time
+
+#help(time)
 
 
-foo=dict(age='35', height='173')
 
+print(time.get_clock_info('clock'))
 
-print(foo.keys())
+print(time.get_clock_info('monotonic'))
 
-print(foo.values())
+print(time.get_clock_info('perf_counter'))
 
-for key in foo.keys():
-    if foo[key] == '35':
-        print(key)
-
-
+print(time.get_clock_info('time'))
