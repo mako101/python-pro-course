@@ -6,6 +6,8 @@ print("My age is %d %s, %d %s" % (age, 'years', 6, 'months'))
 
 for i in range(1, 11):
     # pad out the inserted value to x amount of characters, eg %2d is ' 1'
+    # %5d - pad out the string (decimal) to 5 characters
+    # %x.2f - have 2 decimals for this float
     print("No. %2d squared is %3d and cubed is %5d" % (i, i ** 2, i ** 3))
 
 # Specify number of decimals
@@ -14,7 +16,9 @@ print('Pi is approximately %10.50f' % (22 / 7))
 print("My name is %s" % ('Bob ' + 'Smith'))
 
 
-# NEW (Python 3 based) format - replacement field
+# The NEW placement field syntax!
+# http://www.python-course.eu/python3_formatted_output.php
+
 # Can be ordered any way you like!
 
 print('''

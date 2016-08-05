@@ -6,6 +6,7 @@ print(exVar)
 
 print(opVar)
 
+# string that starts with the special character
 _100ma = 40
 
 print(_100ma)

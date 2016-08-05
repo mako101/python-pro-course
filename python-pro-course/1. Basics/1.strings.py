@@ -25,3 +25,6 @@ for i in range(5):
 
 print('\nFinal line', file=test_file)
 
+
+# Everythng that can be done with strings
+#https://docs.python.org/3.1/library/string.html
