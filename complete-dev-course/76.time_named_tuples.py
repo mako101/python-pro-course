@@ -22,11 +22,7 @@ print('Month:', time_here[1], time_here.tm_mon)
 #print standard time!
 
 l = t.localtime()
-
-for i in (range(3)):
-    t.sleep(1)
-    l = t.localtime()
-    print(l.tm_hour, l.tm_min, l.tm_sec, sep=':')
+print(l.tm_hour, l.tm_min, l.tm_sec, sep=':')
 
 
 from time import perf_counter as my_timer
