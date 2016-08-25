@@ -1,13 +1,6 @@
-import time
+import pandas
 
-#help(time)
+import sqlite3
 
-
-
-print(time.get_clock_info('clock'))
-
-print(time.get_clock_info('monotonic'))
-
-print(time.get_clock_info('perf_counter'))
-
-print(time.get_clock_info('time'))
+for i in dir(pandas.DataFrame):
+    print(i)
