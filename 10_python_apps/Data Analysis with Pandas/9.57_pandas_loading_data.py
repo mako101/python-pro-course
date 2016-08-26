@@ -42,6 +42,7 @@ df2.shape
 # In[26]:
 
 # can specify which delimiter to use for the datastructure
+# if you use 'sep=None', it will try to automatically infer delimiter!
 df3=pandas.read_csv('supermarkets_semi-colons.txt', sep=';')
 df3
 
