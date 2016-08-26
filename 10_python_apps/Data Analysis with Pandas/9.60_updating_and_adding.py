@@ -93,7 +93,7 @@ df1
 # In[163]:
 
 # We can also modify the rows in the same way
-# need to make sure we dont use '' for index or it will add a new column rathr then replace!
+# need to make sure we dont use '' for index or it will add a new column rather then replace!
 df_t=df1.T
 df_t[3]=['332 Hill St', 'Vermont', 'Canada', '100', 'My Shop', 'My State', 'My Continent', 'My ZIP']
 df_t
