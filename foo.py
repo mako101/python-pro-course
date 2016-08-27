@@ -1,6 +1,10 @@
-import pandas
 
-import sqlite3
+x = 'one two'
 
-for i in dir(pandas.DataFrame):
-    print(i)
+print(x.split(' '))
+
+
+
+
+
+
