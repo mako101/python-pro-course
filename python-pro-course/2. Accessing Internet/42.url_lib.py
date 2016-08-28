@@ -51,11 +51,11 @@ print('The server is:', parsed.netloc)
 # A bit of error handling
 print('\nError Handling\n')
 
-print('Invalid URL Example')
+print('Invalid URL Example -> Clean message')
 try:
     print_page('http://www.pretend_server.org')
 except e.URLError as url_error:
-    print(url_error.reason)
+    print(str(url_error.reason).split('] ')[1])
 
 print('\nBad HTTP Code Example')
 try:
